@@ -10,5 +10,6 @@ Online Ref. : Safari
 
 1. Ref: <https://material.angular.io/guide/getting-started>
 2. Run:```ng add @angular/material```
-3. Add: Material Module
-4. Test with buttons (Angular Material components)
+3. Add: Core/MaterialModule
+4. Test with buttons (Angular Material components site)
+5. NOTE - A resart of VSCode is required to see the material effects
