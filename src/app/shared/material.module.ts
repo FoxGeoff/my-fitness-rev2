@@ -17,7 +17,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
-// import { FlexLayoutModule } from '@angular/flex-layout';
+import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatSliderModule } from '@angular/material/slider';
 
@@ -41,7 +41,7 @@ import { MatSliderModule } from '@angular/material/slider';
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
-    // FlexLayoutModule,
+    FlexLayoutModule,
     MatRadioModule,
     MatSliderModule
   ]

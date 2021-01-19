@@ -95,3 +95,56 @@ import { CoreModule } from './core/core.module';
 })
 export class AppModule { }
 ```
+
+```Javascript
+/**
+ * CORE MODULE
+ * Core folder should contain singleton
+ * services shared throughout app
+ *
+ * Services that are specific to a feature can
+ * go in the feature's folder
+ *
+ * Example: LoggingService, ErrorService,
+ * DataSerice
+ */
+
+/**
+ * SHARED MODULE: Reusable components, pipes and directives
+ *
+ * Shared folder should contain reusable
+ * components, pipes and directives
+ *
+ * Example: CalendarComponent,
+ * AutoCompleteComponent
+ */
+```
+
+### Task: Setup flex layout
+
+1 Ref: <https://github.com/angular/flex-layout>
+
+### **DO NOT RUN THIS**
+
+1. Run:```npm i -s @angular/flex-layout @angular/cdk```
+2. Run:```npm install @angular/flex-layout@latest --save```
+
+### **DO RUN THIS - flex-layout must match cli rev**
+
+1. Run```npm install @angular/flex-layout@^9.0.0-beta.30 --save```
+2. Add FlexLayoutModule to material.module.ts
+3. Ref: <https://stackblitz.com/edit/flex-layout-material-seed?file=package.json>
+4. Ref: <https://github.com/angular/flex-layout>
+5. Test with code from the example <https://material.angular.io/components/button/overview>
+
+```Javascript
+/**
+ *  Test code for flex layout
+ * change <div fxFlex="90%"> to <div fxFlex="60%">
+ */
+<div fxLayout="row" fxLayoutAlign="space-around start">
+  <div fxFlex="90%">
+    ....
+  </div>
+</div>
+```
