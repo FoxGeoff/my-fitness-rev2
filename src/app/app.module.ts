@@ -17,7 +17,7 @@ import { MaterialModule } from './shared/material.module';
     AppRoutingModule,
     BrowserAnimationsModule,
     CoreModule,
-    MaterialModule,
+    MaterialModule,   // TODO remove for production
     SharedModule,
   ],
   providers: [],
