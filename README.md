@@ -139,7 +139,7 @@ export class AppModule { }
 
 ```Javascript
 /**
- *  Test code for flex layout
+ * Test code for flex layout
  * change <div fxFlex="90%"> to <div fxFlex="60%">
  */
 <div fxLayout="row" fxLayoutAlign="space-around start">
@@ -148,3 +148,5 @@ export class AppModule { }
   </div>
 </div>
 ```
+
+### Task: Add the UI navigtion <= HERE 1-19-2020 @ 3:14pm
