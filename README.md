@@ -149,4 +149,6 @@ export class AppModule { }
 </div>
 ```
 
-### Task: Add the UI navigtion <= HERE 1-19-2020 @ 3:14pm
+### Task: Add the UI navigtion
+
+### Task: Update nav items
