@@ -151,4 +151,10 @@ export class AppModule { }
 
 ### Task: Add the UI navigtion
 
-### Task: Update nav items <= Here 12:00pm 1-20-2021
+### Task: Update nav items
+
+### Task Add fake AuthService
+
+### Task Add The Signup Form
+
+### Task Add user interface
