@@ -20,6 +20,7 @@ import { MatSortModule } from '@angular/material/sort';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatSliderModule } from '@angular/material/slider';
+import { MatNativeDateModule } from '@angular/material/core';
 
 @NgModule({
 
@@ -43,7 +44,8 @@ import { MatSliderModule } from '@angular/material/slider';
     MatSortModule,
     FlexLayoutModule,
     MatRadioModule,
-    MatSliderModule
+    MatSliderModule,
+    MatNativeDateModule
   ]
 })
 export class MaterialModule { }
