@@ -18,7 +18,9 @@ export class AuthService {
       userId: Math.round(Math.random() * 1000).toString()
     };
     this.authChange.next(true);
-    this.router.navigate(['/training']);
+    // this.router.navigate(['/training']); TODO for prod
+    console.log('registered user!');
+
   }
 
   login(authData: AuthData) {
@@ -27,7 +29,7 @@ export class AuthService {
       userId: Math.round(Math.random() * 1000).toString()
     };
     this.authChange.next(true);
-    this.router.navigate(['/training']);
+    // this.router.navigate(['/training']); TODO for prod
     console.log('login!');
   }
 
