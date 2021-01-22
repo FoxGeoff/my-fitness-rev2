@@ -153,8 +153,13 @@ export class AppModule { }
 
 ### Task: Update nav items
 
-### Task Add fake AuthService
+### Task: Add fake AuthService
 
-### Task Add The Signup Form
+### Task: Add The Signup Form
 
-### Task Add user interface
+### Task: Add user interface (model)
+
+### Task: Add Training components
+
+1. TODO: splitup into lazy loading
+2. Ref code: github/AiClient2020Rev3
