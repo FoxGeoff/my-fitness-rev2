@@ -29,19 +29,19 @@
       >
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
-      <span><mat-icon>directions_run</mat-icon><i>fitness</i></span>
+      <span><mat-icon>directions_run</mat-icon><i>fitness 2.0</i></span>
       <span class="spacer"></span>
       <span>
-        <a class="bg-color" routerLink="/signup">
+        <a *ngIf="!isAuth" class="bg-color" routerLink="/signup">
           Signup
         </a>
-        <a class="bg-color" routerLink="/login">
+        <a *ngIf="!isAuth" class="bg-color" routerLink="/login">
           Login
         </a>
-        <a class="bg-color" routerLink="/training">
+        <a *ngIf="isAuth" class="bg-color" routerLink="/training">
           Training
         </a>
-        <a class="bg-color" routerLink="/login" (click)="logout()">
+        <a *ngIf="isAuth" class="bg-color" routerLink="/login" (click)="logout()">
           Logout
         </a>
       </span>
