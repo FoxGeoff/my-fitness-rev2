@@ -9,13 +9,18 @@
   >
     <mat-toolbar color="primary">Menu</mat-toolbar>
     <mat-nav-list>
-      <a *ngIf="!isAuth" mat-list-item routerLink="/signup"><mat-icon>face</mat-icon>Signup</a>
-      <a *ngIf="isAuth" mat-list-item routerLink="/training"
+      <a *ngIf="!isAuth" mat-list-item routerLink="/signup" (click)="drawer.close()"
+        ><mat-icon>face</mat-icon>Signup</a
+      >
+      <a *ngIf="isAuth" mat-list-item routerLink="/training" (click)="drawer.close()"
         ><mat-icon>fitness_center</mat-icon>Training</a
       >
-      <a *ngIf="!isAuth" mat-list-item routerLink="/login"><mat-icon>login</mat-icon>Login</a>
-      <a *ngIf="isAuth" mat-list-item routerLink="/login" (click)="Logout()"><mat-icon>exit_to_app</mat-icon>Logout</a>
-
+      <a *ngIf="!isAuth" mat-list-item routerLink="/login" (click)="drawer.close()"
+        ><mat-icon>login</mat-icon>Login</a
+      >
+      <a *ngIf="isAuth" mat-list-item routerLink="/login" (click)="Logout()"
+        ><mat-icon>exit_to_app</mat-icon>Logout</a
+      >
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
@@ -32,16 +37,15 @@
       <span><mat-icon>directions_run</mat-icon><i>fit 2.0</i></span>
       <span class="spacer"></span>
       <span>
-        <a *ngIf="!isAuth" class="bg-color" routerLink="/signup">
-          Signup
-        </a>
-        <a *ngIf="!isAuth" class="bg-color" routerLink="/login">
-          Login
-        </a>
-        <a *ngIf="isAuth" class="bg-color" routerLink="/training">
-          Training
-        </a>
-        <a *ngIf="isAuth" class="bg-color" routerLink="/login" (click)="Logout()">
+        <a *ngIf="!isAuth" class="bg-color" routerLink="/signup"> Signup </a>
+        <a *ngIf="!isAuth" class="bg-color" routerLink="/login"> Login </a>
+        <a *ngIf="isAuth" class="bg-color" routerLink="/training"> Training </a>
+        <a
+          *ngIf="isAuth"
+          class="bg-color"
+          routerLink="/login"
+          (click)="Logout()"
+        >
           Logout
         </a>
       </span>
