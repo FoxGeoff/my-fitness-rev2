@@ -1,7 +1,7 @@
 import { map } from 'rxjs/operators';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
 import { AuthService } from 'src/app/auth/auth.service';
 
 @Component({
@@ -11,8 +11,9 @@ import { AuthService } from 'src/app/auth/auth.service';
 })
 export class NavComponent implements OnInit, OnDestroy {
   isAuth = false;
+  authSubscription: Subscription;
 
-  // responsive code based on 'ai-clien2020-rev3
+  // responsive ref: 'ai-clien2020-rev3' good for prod
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
     .pipe(
       map(result => result.matches)
@@ -21,15 +22,23 @@ export class NavComponent implements OnInit, OnDestroy {
   constructor(private breakpointObserver: BreakpointObserver, private authService: AuthService) { }
 
   ngOnInit() {
-
+    // Auth ref: 'my-fitness' TODO update to OAuth 2.0 for prod
+    this.AuthSubscription();
   }
 
   Logout() {
     this.authService.logout();
   }
 
-  ngOnDestroy() {
+  // Auth ref: 'my-fitness' TODO update to OAuth 2.0 for prod
+  AuthSubscription() {
+    this.authSubscription = this.authService.authChange.subscribe(authStatus => {
+      this.isAuth = authStatus;
+    });
+  }
 
+  ngOnDestroy() {
+    this.authSubscription.unsubscribe();
   }
 
 }
