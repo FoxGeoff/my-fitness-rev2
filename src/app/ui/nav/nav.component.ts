@@ -1,6 +1,6 @@
 import { map } from 'rxjs/operators';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnDestroy, OnInit, Output } from '@angular/core';
 import { Observable, Subscription } from 'rxjs';
 import { AuthService } from 'src/app/auth/auth.service';
 
@@ -12,6 +12,8 @@ import { AuthService } from 'src/app/auth/auth.service';
 export class NavComponent implements OnInit, OnDestroy {
   isAuth = false;
   authSubscription: Subscription;
+
+  // @Output() sidenavClose = new EventEmitter(); TODO for Prod
 
   // responsive ref: 'ai-clien2020-rev3' good for prod
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
