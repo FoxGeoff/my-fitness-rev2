@@ -21,8 +21,8 @@ export class NavComponent implements OnInit, OnDestroy {
 
   constructor(private breakpointObserver: BreakpointObserver, private authService: AuthService) { }
 
+  // Auth ref: 'my-fitness' TODO update to OAuth 2.0 for prod
   ngOnInit() {
-    // Auth ref: 'my-fitness' TODO update to OAuth 2.0 for prod
     this.AuthSubscription();
   }
 
