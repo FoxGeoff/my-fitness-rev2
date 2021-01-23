@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
-import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
-import { Observable, Subscription } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { AuthService } from 'src/app/auth/auth.service';
 
 @Component({
@@ -9,11 +9,10 @@ import { AuthService } from 'src/app/auth/auth.service';
   templateUrl: './nav.component.html',
   styleUrls: ['./nav.component.css']
 })
-export class NavComponent {
-
+export class NavComponent implements OnInit, OnDestroy {
   isAuth = false;
-  authSubscription: Subscription;
 
+  // responsive code based on 'ai-clien2020-rev3
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
     .pipe(
       map(result => result.matches)
@@ -21,18 +20,16 @@ export class NavComponent {
 
   constructor(private breakpointObserver: BreakpointObserver, private authService: AuthService) { }
 
-  logout() {
+  ngOnInit() {
+
+  }
+
+  Logout() {
     this.authService.logout();
   }
 
-  AuthSubscription() {
-    this.authSubscription = this.authService.authChange.subscribe(authStatus => {
-      this.isAuth = authStatus;
-    });
-  }
-
   ngOnDestroy() {
-    this.authSubscription.unsubscribe();
+
   }
 
 }

@@ -14,7 +14,7 @@
         ><mat-icon>fitness_center</mat-icon>Training</a
       >
       <a mat-list-item routerLink="/login"><mat-icon>login</mat-icon>Login</a>
-      <a mat-list-item routerLink="/login" (click)="logout()"><mat-icon>exit_to_app</mat-icon>Logout</a>
+      <a mat-list-item routerLink="/login" (click)="Logout()"><mat-icon>exit_to_app</mat-icon>Logout</a>
 
     </mat-nav-list>
   </mat-sidenav>
@@ -41,7 +41,7 @@
         <a *ngIf="isAuth" class="bg-color" routerLink="/training">
           Training
         </a>
-        <a *ngIf="isAuth" class="bg-color" routerLink="/login" (click)="logout()">
+        <a *ngIf="isAuth" class="bg-color" routerLink="/login" (click)="Logout()">
           Logout
         </a>
       </span>
