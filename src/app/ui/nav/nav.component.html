@@ -8,14 +8,40 @@
     [opened]="!(isHandset$ | async)"
   >
     <mat-toolbar color="primary">Menu</mat-toolbar>
-    <mat-nav-list>
-      <a *ngIf="!isAuth" mat-list-item routerLink="/signup" (click)="drawer.close()"
+    <mat-nav-list *ngIf="isHandset$ | async">
+      <a
+        *ngIf="!isAuth"
+        mat-list-item
+        routerLink="/signup"
+        (click)="drawer.close()"
         ><mat-icon>face</mat-icon>Signup</a
       >
-      <a *ngIf="isAuth" mat-list-item routerLink="/training" (click)="drawer.close()"
+      <a
+        *ngIf="isAuth"
+        mat-list-item
+        routerLink="/training"
+        (click)="drawer.close()"
         ><mat-icon>fitness_center</mat-icon>Training</a
       >
-      <a *ngIf="!isAuth" mat-list-item routerLink="/login" (click)="drawer.close()"
+      <a
+        *ngIf="!isAuth"
+        mat-list-item
+        routerLink="/login"
+        (click)="drawer.close()"
+        ><mat-icon>login</mat-icon>Login</a
+      >
+      <a *ngIf="isAuth" mat-list-item routerLink="/login" (click)="Logout()"
+        ><mat-icon>exit_to_app</mat-icon>Logout</a
+      >
+    </mat-nav-list>
+    <mat-nav-list *ngIf="!(isHandset$ | async)">
+      <a *ngIf="!isAuth" mat-list-item routerLink="/signup"
+        ><mat-icon>face</mat-icon>Signup</a
+      >
+      <a *ngIf="isAuth" mat-list-item routerLink="/training"
+        ><mat-icon>fitness_center</mat-icon>Training</a
+      >
+      <a *ngIf="!isAuth" mat-list-item routerLink="/login"
         ><mat-icon>login</mat-icon>Login</a
       >
       <a *ngIf="isAuth" mat-list-item routerLink="/login" (click)="Logout()"
