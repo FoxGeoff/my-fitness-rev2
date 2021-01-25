@@ -151,6 +151,8 @@ export class AppModule { }
 
 ### Task: Add the UI navigtion
 
+1. Add: side menu colapse only in small screen mode
+
 ### Task: Update nav items
 
 ### Task: Add fake AuthService
